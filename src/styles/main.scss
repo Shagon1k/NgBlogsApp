@@ -1,0 +1,25 @@
+/*@import './reset.scss';*/
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #d3afaf;
+	font-size: 16px;
+	font-family: Arial;
+}
+
+.error-msgs {
+	list-style: none;
+	padding: 0;
+	li {
+		font-weight: bold;
+		color: #bc1a1a;
+	}
+}
+
+.blogForm .blogFormInput {
+	display: inline-block;
+	width: 100%;
+}
