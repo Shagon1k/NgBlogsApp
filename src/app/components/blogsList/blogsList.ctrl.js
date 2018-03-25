@@ -1,7 +1,10 @@
 function blogsController($scope, blogsFactory, $location) {
 	var ctrl = this;
 
-	ctrl.blogs = blogsFactory.getBlogs();
+	blogsFactory.getBlogs()
+		.then(function(res) {
+			ctrl.blogs = res;
+		})
 	
 	ctrl.removeBlog = function(id) {
 		blogsFactory.removeBlog(id);

@@ -5,18 +5,19 @@ function addEditBlogController($scope, blogsFactory, $routeParams, $location) {
 	ctrl.changingBlogId = $routeParams.id || '';
 
 	if (ctrl.changingBlogId) {
-		var blog = blogsFactory.getBlogs().find(elem => elem._id === ctrl.changingBlogId);
-		ctrl.newBlogTitle = blog.title;
-		ctrl.newBlogAuthor = blog.author;
-		ctrl.newBlogMessage = blog.message;
+		blogsFactory.getBlogs()
+		.then(function(res) {
+			var blog = res.find(elem => elem._id === ctrl.changingBlogId);
+			ctrl.newBlogTitle = blog.title;
+			ctrl.newBlogAuthor = blog.author;
+			ctrl.newBlogMessage = blog.message;
+		})
 	}
 
 	ctrl.getNewBlog = function() {
 		var newBlog = {
-			_id: '_' + Math.random().toString(36).substr(2, 9),
 			title: ctrl.newBlogTitle,
 			author: ctrl.newBlogAuthor,
-			date: (new Date()).toISOString(),
 			message: ctrl.newBlogMessage
 		};
 

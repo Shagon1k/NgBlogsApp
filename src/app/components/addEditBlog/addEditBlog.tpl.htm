@@ -1,5 +1,5 @@
-<h2 ng-if="!$ctrl.changingBlogId">Add a Task</h2>
-<h2 ng-if="$ctrl.changingBlogId">Edit Task</h2>
+<h2 ng-if="!$ctrl.changingBlogId">Add Blog</h2>
+<h2 ng-if="$ctrl.changingBlogId">Edit Blog</h2>
 <form class="blogForm" name="blogForm">
 	<div class="blogFormInput">
 		<input name="blogTitleInput"
@@ -34,7 +34,7 @@
 	<ul class="error-msgs" ng-messages="blogForm.blogMessageInput.$error">
 		<li ng-if="blogForm.blogMessageInput.$dirty || !$ctrl.submitted" ng-message="required">Error! Blog message is required!</li>
 	</ul>
-	<input ng-if="!$ctrl.changingBlogId" type="button" value="Add Blog" ng-click="$ctrl.addBlog()" />
+	<input ng-if="!$ctrl.changingBlogId" type="button" value="Add" ng-click="$ctrl.addBlog()" />
 	<input ng-if="$ctrl.changingBlogId" type="button" value="Edit" ng-click="$ctrl.editTodo()" />
 </form>
 <a href="/">Home</a>
