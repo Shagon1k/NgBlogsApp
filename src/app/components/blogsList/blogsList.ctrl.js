@@ -5,13 +5,7 @@ function blogsController($scope, blogsFactory, $location) {
 
 	ctrl.page = 0;
 	ctrl.blogsPerPage = BLOGS_PER_PAGE;
-
-	blogsFactory.getBlogs()
-		.then(function(res) {
-			ctrl.blogs = res;
-			console.log(ctrl.blogs);
-		})
-	
+		
 	ctrl.removeBlog = function(id) {
 		blogsFactory.removeBlog(id);
 	}

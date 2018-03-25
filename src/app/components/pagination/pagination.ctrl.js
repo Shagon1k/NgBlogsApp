@@ -2,19 +2,13 @@ import { BLOGS_PER_PAGE } from '../config.js';
 
 function paginationController($scope, blogsFactory) {
 	var ctrl = this;
+	
+	$scope.Math = window.Math;
 
-	blogsFactory.getBlogs()
-		.then(function(res) {
-			ctrl.pagesCount = Math.ceil(res.length / BLOGS_PER_PAGE);
-			console.log(ctrl.pagesCount);
-		})
+	ctrl.blogsPerPage = BLOGS_PER_PAGE;
 
 	ctrl.setPage = function(pageNumb) {
 		ctrl.page = pageNumb;
-	}
-
-	ctrl.activateEditBlog = function(id) {
-		$location.url('/blog/edit/' + id);
 	}
 }
 paginationController.$inject = ['$scope', 'blogsFactory'];
