@@ -1,0 +1,6 @@
+Page: {{$ctrl.page + 1}}
+<ul class="pagination">
+	<li class="page" ng-repeat="n in [] | range:$ctrl.pagesCount">
+		<button ng-click="$ctrl.setPage(n)">{{ n+1 }}</button>
+	</li>
+</ul>

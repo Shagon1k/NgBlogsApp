@@ -23,3 +23,12 @@ body {
 	display: inline-block;
 	width: 100%;
 }
+
+.pagination{
+	margin-top: 10px;
+	
+	.page {
+		display: inline-block;
+		margin-left: 5px;
+	}
+}
